@@ -1,0 +1,54 @@
+baseURL: '/'
+languageCode: en-us
+theme: conventional-logs
+defaultContentLanguageInSubdir: true
+defaultContentLanguage: "en"
+
+# Global parameters
+params:
+  license:
+    title: License
+    action:
+      label: Creative Commons - CC BY 3.0
+      url: 'https://creativecommons.org/licenses/by/3.0/'
+
+  footer:
+    logos:
+    - name: github
+      url: 'https://github.com/conventional-logs/conventionallogs.org'
+
+# Languages parameters
+languages:
+  en:
+    weight: 1
+    languageName: "English"
+    title: Conventional Logs
+    description: A specification for adding human and machine readable meaning to log messages
+    actions:
+    - label: Quick Summary
+      url: '#summary'
+    - label: Full Specification
+      url: '#specification'
+    - label: Contribute
+      url: 'https://github.com/conventional-logs/conventionallogs.org'
+    versions:
+      current: v0.0.1
+      list:
+      - v0.0.1
+
+  it:
+    weight: 2
+    languageName: "Italiano"
+    title: Logs Convenzionali
+    description: Una specifica per creare dei log ...
+    actions:
+    - label: Riepilogo
+      url: '#riepilogo'
+    - label: Leggi la specifica
+      url: '#specifica'
+    - label: Github
+      url: 'https://github.com/conventional-logs/conventionallogs.org'
+    versions:
+      current: v0.0.1
+      list:
+      - v0.0.1
