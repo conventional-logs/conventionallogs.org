@@ -45,10 +45,10 @@ and needs to be descriptive enough to determine the context related to event occ
 1. The `timestamp` field determines when a log entry has been created and contains date+time, it is optional to pass
    timezone information as well.
 1. Each of fields can be renamed and adapted to a company need. An example: `message` may be reported as `event`
-    or `msg` etc.
+   or `msg` etc.
 1. The conventional log specification encourages adding more custom fields to better describe the log entry.
 1. Sensible data, such as customer information ([PII](https://en.wikipedia.org/wiki/Personal_data)),
-    auth token or any other secret must not be added to the entry.
+   auth token or any other secret must not be added to the entry.
 
 ## Specification
 
@@ -64,21 +64,19 @@ discriminant.
 1. The content of the `message` field MUST NOT contain variable content and MUST be a static.
 1. The `message` field MAY be named differently.
 1. A field for the `timestamp` MUST be provided in each log entry.
-1. The content of the `timestamp` field MUST include year, month, day, hour, minute, second, and millisecond of the
-   event occurrence.
-1. The content of the `timestamp` field MAY include a timezone information.
+1. The content of the `timestamp` field MUST be a formatted as [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601).
 1. The `timestamp` field MAY be named differently.
 1. A field for the `severity` MUST be provided in each log entry.
 1. The `severity` field MAY be named differently.
 1. The content of the `severity` field SHOULD be one of ***debug***, ***info***, ***warning*** (or ***warn***),
-    ***error***, ***fatal***.
+   ***error***, ***fatal***.
 1. The content of the `severity` field MUST be all lowercase or uppercase.
 1. A ***debug*** `severity` SHOULD be used only for debugging purposes.
 1. An ***info*** `severity` SHOULD ....
 1. A ***warning*** `severity` (or ***warn***) SHOULD report an event may cause problem to an application but that
-    still does not affect the user directly.
+   still does not affect the user directly.
 1. An ***error*** `severity` SHOULD be used when an event needs attention
-    because it affects the user of the application in a disruptive way.
+   because it affects the user of the application in a disruptive way.
 1. A ***fatal*** `severity` SHOULD flag an entry that caused an application to crash or terminate.
 1. A field for the `scope` SHOULD be provided.
 1. The content of a `scope` field MUST be a reference to the creator of the log.
@@ -86,7 +84,7 @@ discriminant.
 1. Further entry fields SHOULD be added to a log entry to better.
 1. The log entry fields MUST NOT contain any application secret.
 1. The log entry fields MUST NOT contain any sensible customer
-    data ([PII](https://en.wikipedia.org/wiki/Personal_data)).
+   data ([PII](https://en.wikipedia.org/wiki/Personal_data)).
 1. The log entry fields MAY be encoded in different formats.
 1. It is RECOMMENDED to add tracing information to a log entry.
 1. The log entry fields SHOULD not contain duplicated fields.
@@ -207,7 +205,8 @@ discriminant.
 ]
 ```
 
-### A log entry with a *fields* section that contains a discriminant field (user_id) which allows having searchable log messages
+### A log entry with a *
+fields* section that contains a discriminant field (user_id) which allows having searchable log messages
 
 ***DO***
 
