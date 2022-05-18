@@ -32,8 +32,8 @@ A basic log entry should be structured as follows:
 A minimal log entry is composed by the following fields,
 and needs to be descriptive enough to determine the context related to event occurrence.
 
-1. The `severity`, also referred as `level`, describes the importance of a log entry.
-   Starting from the lower priority to the higher one, the recommended levels are ***debug***, ***info***,
+1. The `severity` describes the importance of a log entry.
+   Starting from the lower priority to the higher one, the recommended severities are ***debug***, ***info***,
    ***warning*** (or ***warn***), ***error***, ***fatal***.
 1. Other values as `severity` can be used, but it is recommended to stick to the suggested one.
 1. The `scope` field represents the issuer of the log entry.
@@ -67,7 +67,6 @@ discriminant.
 1. The content of the `timestamp` field MUST be a formatted as [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601).
 1. The `timestamp` field MAY be named differently.
 1. A field for the `severity` MUST be provided in each log entry.
-1. The `severity` field MAY be named differently.
 1. The content of the `severity` field SHOULD be one of ***debug***, ***info***, ***warning*** (or ***warn***),
    ***error***, ***fatal***.
 1. The content of the `severity` field MUST be all lowercase or uppercase.
@@ -119,7 +118,7 @@ discriminant.
 ```
 [
   {
-    "level": "ERROR",
+    "severity": "ERROR",
     "node": "web-app",
     "event": "could not save the user",
     "occurred_at": "2022-05-14T14:16:15+00:10",
@@ -133,7 +132,7 @@ discriminant.
 ```
 [
   {
-    "level": "ERROR",
+    "severity": "ERROR",
     "node": "web-app",
     "event": "could not save the user",
     "occurred_at": "2022-05-14T14:16:15+00:10",
