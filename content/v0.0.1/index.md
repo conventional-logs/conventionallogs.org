@@ -35,19 +35,19 @@ and needs to be descriptive enough to determine the context related to event occ
 1. The `severity`, also referred as `level`, describes the importance of a log entry.
    Starting from the lower priority to the higher one, the recommended levels are ***debug***, ***info***,
    ***warning*** (or ***warn***), ***error***, ***fatal***.
-3. Other values as `severity` can be used, but it is recommended to stick to the suggested one.
-4. The `scope` field represents the issuer of the log entry.
+1. Other values as `severity` can be used, but it is recommended to stick to the suggested one.
+1. The `scope` field represents the issuer of the log entry.
    This is useful especially in contexts where a log entry may be created from multiple services.
-5. In complex systems the `scope` could also point to the node/service that caused the log entry.
-6. The `message` is the core information of a log entry, and describes an event that occurred in a system.
-7. When the same event happens multiple times, the `message` must always be the same and other fields must be used as
+1. In complex systems the `scope` could also point to the node/service that caused the log entry.
+1. The `message` is the core information of a log entry, and describes an event that occurred in a system.
+1. When the same event happens multiple times, the `message` must always be the same and other fields must be used as
    discriminant.
-8. The `timestamp` field determines when a log entry has been created and contains date+time, it is optional to pass
+1. The `timestamp` field determines when a log entry has been created and contains date+time, it is optional to pass
    timezone information as well.
-10. Each of fields can be renamed and adapted to a company need. An example: `message` may be reported as `event`
+1. Each of fields can be renamed and adapted to a company need. An example: `message` may be reported as `event`
     or `msg` etc.
-11. The conventional log specification encourages adding more custom fields to better describe the log entry.
-12. Sensible data, such as customer information ([PII](https://en.wikipedia.org/wiki/Personal_data)),
+1. The conventional log specification encourages adding more custom fields to better describe the log entry.
+1. Sensible data, such as customer information ([PII](https://en.wikipedia.org/wiki/Personal_data)),
     auth token or any other secret must not be added to the entry.
 
 ## Specification
@@ -59,37 +59,37 @@ When the same event happens multiple times, the message must always be the same 
 discriminant.
 
 1. A field for the `message` MUST be provided in each log entry.
-2. The content of a `message` field MUST be a description of an event occurrence.
-3. The content of the `message` field SHOULD be unique within your system.
-4. The content of the `message` field MUST NOT contain variable content and MUST be a static.
-5. The `message` field MAY be named differently.
-6. A field for the `timestamp` MUST be provided in each log entry.
-7. The content of the `timestamp` field MUST include year, month, day, hour, minute, second, and millisecond of the
+1. The content of a `message` field MUST be a description of an event occurrence.
+1. The content of the `message` field SHOULD be unique within your system.
+1. The content of the `message` field MUST NOT contain variable content and MUST be a static.
+1. The `message` field MAY be named differently.
+1. A field for the `timestamp` MUST be provided in each log entry.
+1. The content of the `timestamp` field MUST include year, month, day, hour, minute, second, and millisecond of the
    event occurrence.
-8. The content of the `timestamp` field MAY include a timezone information.
-9. The `timestamp` field MAY be named differently.
-10. A field for the `severity` MUST be provided in each log entry.
-11. The `severity` field MAY be named differently.
-12. The content of the `severity` field SHOULD be one of ***debug***, ***info***, ***warning*** (or ***warn***),
+1. The content of the `timestamp` field MAY include a timezone information.
+1. The `timestamp` field MAY be named differently.
+1. A field for the `severity` MUST be provided in each log entry.
+1. The `severity` field MAY be named differently.
+1. The content of the `severity` field SHOULD be one of ***debug***, ***info***, ***warning*** (or ***warn***),
     ***error***, ***fatal***.
-13. The content of the `severity` field MUST be all lowercase or uppercase.
-14. A ***debug*** `severity` SHOULD be used only for debugging purposes.
-15. An ***info*** `severity` SHOULD ....
-16. A ***warning*** `severity` (or ***warn***) SHOULD report an event may cause problem to an application but that
+1. The content of the `severity` field MUST be all lowercase or uppercase.
+1. A ***debug*** `severity` SHOULD be used only for debugging purposes.
+1. An ***info*** `severity` SHOULD ....
+1. A ***warning*** `severity` (or ***warn***) SHOULD report an event may cause problem to an application but that
     still does not affect the user directly.
-17. An ***error*** `severity` SHOULD be used when an event needs attention
+1. An ***error*** `severity` SHOULD be used when an event needs attention
     because it affects the user of the application in a disruptive way.
-18. A ***fatal*** `severity` SHOULD flag an entry that caused an application to crash or terminate.
-19. A field for the `scope` SHOULD be provided.
-20. The content of a `scope` field MUST be a reference to the creator of the log.
-21. The `scope` field MAY be named differently.
-22. Further entry fields SHOULD be added to a log entry to better.
-23. The log entry fields MUST NOT contain any application secret.
-24. The log entry fields MUST NOT contain any sensible customer
+1. A ***fatal*** `severity` SHOULD flag an entry that caused an application to crash or terminate.
+1. A field for the `scope` SHOULD be provided.
+1. The content of a `scope` field MUST be a reference to the creator of the log.
+1. The `scope` field MAY be named differently.
+1. Further entry fields SHOULD be added to a log entry to better.
+1. The log entry fields MUST NOT contain any application secret.
+1. The log entry fields MUST NOT contain any sensible customer
     data ([PII](https://en.wikipedia.org/wiki/Personal_data)).
-25. The log entry fields MAY be encoded in different formats.
-26. It is RECOMMENDED to add tracing information to a log entry.
-27. The log entry fields SHOULD not contain duplicated fields.
+1. The log entry fields MAY be encoded in different formats.
+1. It is RECOMMENDED to add tracing information to a log entry.
+1. The log entry fields SHOULD not contain duplicated fields.
 
 ## Examples
 
