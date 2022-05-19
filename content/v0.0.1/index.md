@@ -37,14 +37,13 @@ and needs to be descriptive enough to determine the context related to event occ
    ***warning*** (or ***warn***), ***error***, ***fatal***.
 1. Other values as `severity` can be used, but it is recommended to stick to the suggested one.
 1. The `scope` field represents the issuer of the log entry.
-   This is useful especially in contexts where a log entry may be created from multiple services.
+   This is useful especially in contexts where the same log entry may be created from multiple services.
 1. In complex systems the `scope` could also point to the node/service that caused the log entry.
 1. The `message` is the core information of a log entry, and describes an event that occurred in a system.
 1. The message is written in past tense since logs are event occurred in the past.
 1. When the same event happens multiple times, the `message` must always be the same and other fields must be used as
    discriminant.
-1. The `timestamp` field determines when a log entry has been created and contains date+time, it is optional to pass
-   timezone information as well.
+1. The `timestamp` field determines when a log entry has been created and contains date+time.
 1. An `error` field could be part of a log entry,  
    and it represents an error (or exception) that cause the log entry to be reported.  
 1. The conventional log specification encourages adding more custom fields to better describe the log entry.
@@ -62,26 +61,26 @@ discriminant.
 1. A field for the `message` MUST be provided in each log entry.
 1. The content of a `message` field MUST be a description of an event occurrence.
 1. The content of the `message` field SHOULD be unique within your system.
-1. The content of the `message` field MUST NOT contain variable content and MUST be a static.
+1. The content of the `message` field MUST NOT contain variable content and MUST be a static constant.
 1. The content of the `message` field MUST be written in past tense.
 1. A field for the `timestamp` MUST be provided in each log entry.
 1. The content of the `timestamp` field MUST be a formatted as [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601).
 1. A field for the `severity` MUST be provided in each log entry.
 1. The content of the `severity` field SHOULD be one of ***debug***, ***info***, ***warning*** (or ***warn***),
    ***error***, ***fatal***.
-1. The content of the `severity` field MUST be all lowercase or uppercase.
+1. The content of the `severity` field MUST NOT be mixed case.
 1. A ***debug*** `severity` SHOULD be used only for debugging purposes.
-1. An ***info*** `severity` SHOULD ....
-1. A ***warning*** `severity` (or ***warn***) SHOULD report an event may cause problem to an application but that
+1. An ***info*** `severity` SHOULD be used to communicate a state change which doesn't represent an error. 
+1. A ***warning*** `severity` (or ***warn***) SHOULD report an event may cause problem to an application but its occurrence
    still does not affect the user directly.
 1. An ***error*** `severity` SHOULD be used when an event needs attention
-   because it affects the user of the application in a disruptive way.
+   because it affects the users of the application in a disruptive way.
 1. A ***fatal*** `severity` SHOULD flag an entry that caused an application to crash or terminate.
 1. A field for the `error` MAY be provided.
 1. The content of a `error` field MUST be the description regarding an error (exception) that caused the log entry.
 1. A field for the `scope` SHOULD be provided.
 1. The content of a `scope` field MUST be a reference to the creator of the log.
-1. Further entry fields SHOULD be added to a log entry to better.
+1. Further entry fields SHOULD be added to a log entry to better describe the log entry.
 1. The log entry fields MUST NOT contain any application secret.
 1. The log entry fields MUST NOT contain any sensible customer
    data ([PII](https://en.wikipedia.org/wiki/Personal_data)).
