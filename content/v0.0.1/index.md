@@ -168,7 +168,7 @@ discriminant.
 ]
 ```
 
-*** DON'T ***
+***DON'T***
 
 ```
 [
@@ -222,7 +222,7 @@ discriminant.
 ]
 ```
 
-*** DON'T ***
+***DON'T***
 
 ```
 [
@@ -260,7 +260,7 @@ discriminant.
 ]
 ```
 
-*** DON'T ***
+***DON'T***
 
 ```
 [
